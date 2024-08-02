@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="dark:bg-gray-800">
+<body>
     <header class="dark:bg-gray-700">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -18,12 +18,15 @@
          
           <div class="hidden lg:flex lg:gap-x-12">
             <div class="relative">
-              <button type="button" id="product-button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-300" aria-expanded="false">
-                Product
-                <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                </svg>
-              </button>
+                <a href="./home.html">
+                    <button type="button" id="product-button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-300" aria-expanded="false">
+                        Product
+                        
+                        <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </a>
       
 
               <div id="product-menu" class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 hidden">
@@ -165,14 +168,35 @@
             
           </div>
         </div>
-      </header>
       
-      <main>
-        <section class="flex flex-wrap justify-center bg-gray-900 p-8" id="sectionCards">
-
-        </section>
-      </main>
-
-    <script type="module" src="../controllers/home.ts"></script>
+    </header>
+    <main class="dark:bg-gray-800 flex items-center justify-center min-h-screen">
+        <div class="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Formulario de Información</h2>
+            <form action="#" id="formAdd" method="post">
+                <div class="mb-4">
+                    <label for="pais" class="block text-gray-700 dark:text-gray-300 mb-2">País</label>
+                    <input type="text" id="Npais" name="pais" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" required>
+                </div>
+                <div class="mb-4">
+                    <label for="ciudad" class="block text-gray-700 dark:text-gray-300 mb-2">Ciudad</label>
+                    <input type="text" id="Nciudad" name="ciudad" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" required>
+                </div>
+                <div class="mb-4">
+                    <label for="imagen" class="block text-gray-700 dark:text-gray-300 mb-2">Imagen (URL)</label>
+                    <input type="url" id="Nimagen" name="imagen" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" required>
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-gray-700 dark:text-gray-300 mb-2">Descripción</label>
+                    <textarea id="Ndescription" name="description" class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300" rows="4" required></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 dark:focus:ring-blue-700">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+   
+    <script type="module" src="../controllers/CityCrud.ts"></script>
 </body>
 </html>
