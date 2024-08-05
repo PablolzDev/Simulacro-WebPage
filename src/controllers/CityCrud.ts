@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const cityAdd = await citiesController.postCities("/cities", newCity);
+            const cityAdd = await citiesController.postCity("/cities", newCity);
             alert("Se agregó la ciudad");
             form.reset();
             window.location.href = "../view/home.html";
