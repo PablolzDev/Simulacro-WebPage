@@ -8,7 +8,7 @@ export class CitiesController {
     }
 
     async getCities(endPoint: string): Promise<ICity[]> {
-        const response = await fetch(`${this.url}${endPoint}`);
+        const response = await fetch(`${this.url}/${endPoint}`);
         const data = await response.json();
         console.log(response.status);
 
